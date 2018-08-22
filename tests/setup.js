@@ -23,6 +23,7 @@ jest.mock('../src/constants', () => ({
 window.localStorage = {};
 window.localStorage.setItem = jest.fn();
 window.localStorage.getItem = jest.fn();
+window.localStorage.removeItem = jest.fn();
 
 beforeEach(() => {
   global.ElectronFiddle = new ElectronFiddleMock();
@@ -31,4 +32,5 @@ beforeEach(() => {
 
   window.localStorage.setItem.mockReset();
   window.localStorage.getItem.mockReset();
+  window.localStorage.removeItem.mockReset();
 });
